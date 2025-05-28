@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("initData")) {
+            const tg = window.Telegram.WebApp;
+            const initData = tg.initData;
+            window.location.href = "/?initData=" + encodeURIComponent(initData);
+        }
+    };
+
+</script>
+<div th:if="${user != null}">
+    <p>Имя: <span th:text="${user.first_name}"></span></p>
+    <p>Фамилия: <span th:text="${user.last_name}"></span></p>
+    <p>Юзернейм: <span th:text="${user.username}"></span></p>
+    <p>Язык: <span th:text="${user.language_code}"></span></p>
+</div>
+<h1>sssssssssssssssssssssssss</h1>
+</body>
+</html>
