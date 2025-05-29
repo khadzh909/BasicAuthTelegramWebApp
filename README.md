@@ -1,25 +1,47 @@
-# Telegram WebApp Auth — Spring Boot + Telegram Login + Docker
+# 🚀 Telegram Auth Service
 
-Это пример Telegram WebApp, использующего авторизацию через `initData`, валидацию подписи (`hash`), сохранение пользователя в базу данных и отображение данных в UI.
+Сервис авторизации через Telegram, реализованный с использованием Spring Boot. Пользователи проходят аутентификацию через Telegram Web Apps, после чего их данные сохраняются в базу данных PostgreSQL.
 
 ---
 
-## 🧩 Технологии
+## 📦 Стек технологий
 
 - Java 17
 - Spring Boot
+- Spring Data JPA (Hibernate)
 - PostgreSQL
-- Docker + Docker Compose
-- Telegram WebApp API
-- Thymeleaf
-- Ngrok (для проброса локального сервера наружу)
+- Docker / Docker Compose
+- Telegram Bot API
 
 ---
 
-## 🚀 Быстрый запуск
+## 📁 Структура проекта
 
-### 1. Клонируй репозиторий:
+telegram-auth/
+├── src/
+│ ├── main/
+│ │ ├── java/com/example/telegramauth/
+│ │ │ ├── controller/
+│ │ │ ├── service/
+│ │ │ ├── repository/
+│ │ │ ├── model/
+│ │ │ └── DTO/
+│ │ └── resources/
+│ │ └── application.properties
+├── docker-compose.yml
+├── README.md
+└── ...
+
+---
+
+## ⚙️ Настройка окружения
+
+### 1. Запуск PostgreSQL через Docker
+
+Убедись, что у тебя установлен [Docker](https://www.docker.com/).
+
+Запусти контейнер с базой данных:
 
 ```bash
-git clone https://github.com/your-username/telegram-webapp-auth.git
-cd telegram-webapp-auth
+docker-compose up -d
+
