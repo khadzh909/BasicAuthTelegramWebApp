@@ -8,7 +8,6 @@ import java.util.Objects;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String first_name;
     private String last_name;
@@ -74,7 +73,7 @@ public class User {
         this.language_code = language_code;
     }
 
-    public boolean isAllows_write_to_pm() {
+    public boolean getAllows_write_to_pm() {
         return allows_write_to_pm;
     }
 

@@ -1,8 +1,6 @@
 package com.example.telegramauth.DTO;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDTO {
     private Long id;
     private String first_name;
@@ -16,7 +14,6 @@ public class UserDTO {
     }
 
     public UserDTO(Long id, String first_name, String last_name, String username, String language_code, boolean allows_write_to_pm, String photo_url) {
-
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -66,7 +63,7 @@ public class UserDTO {
         this.language_code = language_code;
     }
 
-    public boolean isAllows_write_to_pm() {
+    public boolean getAllows_write_to_pm() {
         return allows_write_to_pm;
     }
 
@@ -91,7 +88,6 @@ public class UserDTO {
                 ", username='" + username + '\'' +
                 ", language_code='" + language_code + '\'' +
                 ", allows_write_to_pm=" + allows_write_to_pm +
-                ", photo_url='" + photo_url + '\'' +
                 '}';
     }
 }
